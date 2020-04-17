@@ -1,0 +1,17 @@
+name: 'Generate env file'
+description: 'Generate env files from environment.'
+inputs:
+  input-file:  # id of input
+    description: 'Input filename. This should be a correct env file.'
+    required: false
+    default: '.env.example'
+  output-file:
+    description: 'Output filename. This should be a valid path.'
+    required: false
+    default: '.env'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.input-file }}
+    - ${{ inputs.output-file }}
