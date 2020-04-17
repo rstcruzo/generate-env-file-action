@@ -45,10 +45,9 @@ def generate_env_files():
     values_text = ''
 
     for key, value in input_variables.items():
-
-        if os.environ.get(key) is not None:
-            value = os.environ[key]
-            values_text += f'{key}={value}\n'
+        if environ.get(key) is not None:
+            value = environ[key]
+        values_text += f'{key}={value}\n'
 
     # remove last line break
     values_text = values_text[:-1]
@@ -58,5 +57,5 @@ def generate_env_files():
         print(f'Generated {args.output}')
 
 
-def __main__():
+if __name__ == "__main__":
     generate_env_files()
