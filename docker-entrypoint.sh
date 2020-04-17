@@ -1,3 +1,3 @@
 #!/bin/bash
 
-python3 generate-env-file.py $@
+python3 /generate-env-file.py $@
